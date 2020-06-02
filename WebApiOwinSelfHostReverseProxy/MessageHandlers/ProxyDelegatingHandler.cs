@@ -35,8 +35,6 @@ namespace WebApiOwinSelfHostReverseProxy.MessageHandlers
 
             request.Headers.Host = _uri.Host;
 
-            var ct = request.Content.Headers.ContentType;
-
             if (request.Method == HttpMethod.Get)
             {
                 request.Content = null;
