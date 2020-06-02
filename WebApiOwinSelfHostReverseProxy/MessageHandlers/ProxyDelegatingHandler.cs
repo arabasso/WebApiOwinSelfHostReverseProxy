@@ -44,5 +44,12 @@ namespace WebApiOwinSelfHostReverseProxy.MessageHandlers
 
             return await _client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            _client.Dispose();
+        }
     }
 }
